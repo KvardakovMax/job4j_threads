@@ -1,6 +1,5 @@
-#Java Concurrency and Multithreading
+# Java Concurrency and Multithreading
 
-____
 - Threads
 - Atomicity, Immutable objects
 - Synchronized, monitor, mutex, semaphore
