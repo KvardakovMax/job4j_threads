@@ -15,7 +15,6 @@ public class Wget {
                     }
                 }
         );
-
         firstThread.start();
     }
 
