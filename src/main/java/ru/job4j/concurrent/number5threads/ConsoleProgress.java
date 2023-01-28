@@ -22,7 +22,7 @@ public class ConsoleProgress implements Runnable {
                 System.out.print("\r Load " + process[counter++]);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
-                throw new RuntimeException("Unexpected interrupt", e);
+                e.printStackTrace();
             }
         }
     }
