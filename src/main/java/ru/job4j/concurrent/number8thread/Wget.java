@@ -17,16 +17,24 @@ public class Wget implements Runnable {
 
     @Override
     public void run() {
+        String[] urlPart = url.split("/");
+        String fileName = urlPart[urlPart.length - 1];
         try (BufferedInputStream in = new BufferedInputStream(new URL(url).openStream());
-             FileOutputStream fileOutputStream = new FileOutputStream("pom_tmp.xml")) {
+             FileOutputStream fileOutputStream = new FileOutputStream(fileName)) {
             byte[] dataBuffer = new byte[1024];
-            int waitCountSecond = dataBuffer.length / speed;
-            if (waitCountSecond != 1) {
-                Thread.sleep(1000 * waitCountSecond);
-            }
-
+            int downloadData = 0;
             int bytesRead;
+            long start = System.currentTimeMillis();
             while ((bytesRead = in.read(dataBuffer, 0, 1024)) != -1) {
+                if (speed <= downloadData) {
+                    long end = System.currentTimeMillis();
+                    if (end - start < 1000) {
+                        Thread.sleep(1000 - (end - start));
+                        start = end;
+                    }
+                    downloadData = 0;
+                }
+                downloadData += bytesRead;
                 fileOutputStream.write(dataBuffer, 0, bytesRead);
             }
         } catch (IOException e) {
@@ -37,7 +45,7 @@ public class Wget implements Runnable {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        if (args[0] == null || Integer.parseInt(args[1]) <= 0) {
+        if (args.length == 0 || args[0] == null || Integer.parseInt(args[1]) <= 0) {
             throw new IllegalArgumentException("Illegal argument!");
         }
         String url = args[0];
