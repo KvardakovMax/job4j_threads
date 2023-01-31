@@ -7,12 +7,10 @@ public class ThreadState {
                 () -> System.out.println(Thread.currentThread().getName())
         );
         firstThread.start();
-
         Thread secondThread = new Thread(
                 () -> System.out.println(Thread.currentThread().getName())
         );
         secondThread.start();
-
         while (firstThread.getState() != Thread.State.TERMINATED && secondThread.getState() != Thread.State.TERMINATED) {
             System.out.println("waiting");
         }
