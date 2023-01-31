@@ -11,7 +11,7 @@ public class ThreadState {
                 () -> System.out.println(Thread.currentThread().getName())
         );
         secondThread.start();
-        while (firstThread.getState() != Thread.State.TERMINATED && secondThread.getState() != Thread.State.TERMINATED) {
+        while (firstThread.getState() != Thread.State.TERMINATED || secondThread.getState() != Thread.State.TERMINATED) {
             System.out.println("waiting");
         }
         System.out.println(Thread.currentThread().getName() + " - " + firstThread.getState());
