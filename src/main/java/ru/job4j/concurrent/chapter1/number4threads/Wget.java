@@ -1,4 +1,4 @@
-package ru.job4j.concurrent.number4threads;
+package ru.job4j.concurrent.chapter1.number4threads;
 
 public class Wget {
 

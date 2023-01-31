@@ -1,4 +1,4 @@
-package ru.job4j.concurrent.number8thread;
+package ru.job4j.concurrent.chapter1.number8thread;
 
 import java.io.BufferedInputStream;
 import java.io.FileOutputStream;
