@@ -1,4 +1,4 @@
-package ru.job4j.concurrent.number3threads;
+package ru.job4j.concurrent.chapter1.number3threads;
 
 public class ThreadState {
 
