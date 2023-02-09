@@ -1,4 +1,4 @@
-package ru.job4j.concurrent.chapter4;
+package ru.job4j.concurrent.chapter3.number4;
 
 import net.jcip.annotations.GuardedBy;
 import net.jcip.annotations.ThreadSafe;
