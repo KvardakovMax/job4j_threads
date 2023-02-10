@@ -10,4 +10,4 @@
 - ThreadPool, ExecutorService, ForkJoinPool
 - Callable, Future, FutureTask
 - Piped Streams
-  (P.s. This repository is intended for me. It contains a bunch of curves, test stuff.)
+  (P.s. This repository is intended for me. It contains a bunch of curves, test stuff!)
