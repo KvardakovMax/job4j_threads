@@ -10,4 +10,5 @@
 - ThreadPool, ExecutorService, ForkJoinPool
 - Callable, Future, FutureTask
 - Piped Streams
+- "Объединение зафиксированных измененEй"
   (P.s. This repository was created for personal use. It contains a bunch of curves, test stuff, etc.)
