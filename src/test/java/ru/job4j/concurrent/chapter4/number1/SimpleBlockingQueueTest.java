@@ -6,10 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SimpleBlockingQueueTest {
     @Test
-    public void WhenTwoThreadsCreated() throws InterruptedException {
+    public void whenTwoThreadsCreated() throws InterruptedException {
         SimpleBlockingQueue<Integer> queue = new SimpleBlockingQueue();
-        Thread producer = new Thread(() ->
-        {
+        Thread producer = new Thread(() -> {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -19,8 +18,7 @@ public class SimpleBlockingQueueTest {
                 queue.offer(i);
             }
         });
-        Thread consumer = new Thread(() ->
-        {
+        Thread consumer = new Thread(() -> {
             for (int i = 0; i < 3; i++) {
                 try {
                     queue.poll();
